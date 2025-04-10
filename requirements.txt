@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pip
+python-dotenv
+sqlalchemy
+pymysql
+PyPDF2
+python-docx
+python-pptx
+olefile
+beautifulsoup4
+openai
+python-multipart
