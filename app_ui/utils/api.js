@@ -1,5 +1,4 @@
 // API 관련 fetch 로직 전담
-
 // utils/api.js
 
 export async function uploadFile(formData) {

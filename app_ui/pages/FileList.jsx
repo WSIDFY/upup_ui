@@ -1,6 +1,5 @@
 // 파일을 열 때는 파일 ID를 기반으로, 
 // 백엔드에서 해당 파일을 찾아 반환하는 API 엔드포인트를 호출
-
 // /filelist?name=컴퓨터구조론&description=수업자료&id=3&file=자료.pdf 백엔드에 파일저장시에 브라우저 정상 출력
 
 'use client';
