@@ -15,13 +15,13 @@ project-root/
 │   ├── vite.config.js     # Vite 설정 파일
 │   ├── package.json
 │   └── README.md
-app_server/
-├── main.py                  # FastAPI 진입점
-├── api/
-│   └── v1/
-│       └── endpoints/
-│           ├── file.py      # 파일 업로드, 다운로드 API
-│           └── quiz.py      # 퀴즈 생성, 채점 API
+├── app_server/
+│   ├── main.py                  # FastAPI 진입점
+│   ├── api/
+│       └── v1/
+│           └── endpoints/
+│               ├── file.py      # 파일 업로드, 다운로드 API
+│               └── quiz.py      # 퀴즈 생성, 채점 API
 ├── core/
 │   └── database.py          # SQLAlchemy + get_db
 ├── models/
