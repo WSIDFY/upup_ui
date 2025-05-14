@@ -1,6 +1,6 @@
 ```
 project-root/
-├── client/
+├── app_ui/
 │   ├── public/            # 정적 파일
 │   ├── src/               # 소스 코드
 │   │   ├── assets/        # 이미지, 폰트 등
@@ -15,7 +15,7 @@ project-root/
 │   ├── vite.config.js     # Vite 설정 파일
 │   ├── package.json
 │   └── README.md
-├── server/                 # Express 백엔드
+├── app_server/                 # Express 백엔드
 │   ├── config/             # 설정 파일
 │   │   └── db.js           # MongoDB 연결 설정
 │   ├── controllers/        # 라우트 컨트롤러
