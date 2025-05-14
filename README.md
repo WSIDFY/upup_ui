@@ -15,33 +15,33 @@ project-root/
 │   ├── vite.config.js     # Vite 설정 파일
 │   ├── package.json
 │   └── README.md
-├── app_server/                          # FastAPI 백엔드
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── v1/
-│   │   │   │   ├── endpoints/
-│   │   │   │   │   ├── file.py           # 파일 업로드/처리 API
-│   │   │   │   │   ├── quiz.py           # 퀴즈 생성/풀이 API
-│   │   │   │   │   └── __init__.py
-│   │   │   │   └── __init__.py
-│   │   ├── core/
-│   │   │   ├── config.py                 # 환경 변수 로딩
-│   │   │   └── database.py               # SQLAlchemy DB 연결
-│   │   ├── models/
-│   │   │   ├── file.py
-│   │   │   ├── quiz.py
-│   │   │   └── __init__.py
-│   │   ├── schemas/
-│   │   │   ├── file.py
-│   │   │   ├── quiz.py
-│   │   │   └── __init__.py
-│   │   ├── services/
-│   │   │   ├── file_service.py           # 텍스트 추출 로직
-│   │   │   ├── quiz_service.py           # GPT 퀴즈 생성 로직
-│   │   │   └── gpt_client.py             # OpenAI API 호출
-│   │   ├── utils/
-│   │   │   └── file_parser.py            # .hwp/.pdf 등 텍스트 파서
-│   │   └── main.py                       # FastAPI 앱 진입점
-│   ├── .env
-│   ├── requirements.txt
-│   └── README.md
+app_server/
+├── main.py                  # FastAPI 진입점
+├── api/
+│   └── v1/
+│       └── endpoints/
+│           ├── file.py      # 파일 업로드, 다운로드 API
+│           └── quiz.py      # 퀴즈 생성, 채점 API
+├── core/
+│   └── database.py          # SQLAlchemy + get_db
+├── models/
+│   └── file.py              # UploadedFile 모델
+├── schemas/
+│   ├── file.py              # FileCreate, FileOut
+│   └── quiz.py              # QuizRequest, QuizSubmission
+├── services/
+│   ├── file_service.py      # 텍스트 추출 로직
+│   ├── quiz_service.py      # GPT 기반 퀴즈 생성/채점
+│   └── gpt_client.py        # OpenAI 호출 클라이언트
+├── utils/
+│   ├── file_parser.py       # 확장자에 따른 파서 분기
+│   └── extractors/
+│       ├── pdf_extractor.py
+│       ├── docx_extractor.py
+│       ├── ppt_extractor.py
+│       ├── txt_extractor.py
+│       └── hwp_extractor.py
+├── uploads/                 # 업로드된 파일 저장 폴더
+├── .env
+├── requirements.txt
+└── README.md
