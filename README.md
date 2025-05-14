@@ -1,3 +1,4 @@
+```
 project-root/
 ├── client/
 │   ├── public/            # 정적 파일
@@ -42,3 +43,4 @@ project-root/
 │   └── .env                # 환경 변수 (git에 포함하지 않음)
 ├── .gitignore
 └── README.md
+```
