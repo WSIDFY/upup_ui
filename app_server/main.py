@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.v1.endpoints import file, quiz
-from core.database import Base, engine
+from app_server.api.v1.endpoints import file, quiz
+from app_server.core.database import Base, engine
 
 # FastAPI 인스턴스 생성 + Swagger 정보 설정
 app = FastAPI(

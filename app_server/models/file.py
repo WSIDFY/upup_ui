@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text
-from app_server.core.database import Basefrom 
+from app_server.core.database import Base 
 from sqlalchemy import DateTime, func
 
 uploaded_at = Column(DateTime(timezone=True), server_default=func.now())
