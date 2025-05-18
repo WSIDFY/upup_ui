@@ -6,7 +6,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
-import styles from '../styles/filelist.module.css';
+import styles from '../styles/Filelist.module.css'; // 25.05.18 대소문자 구분 수정
 
 export default function FileList() {
   const searchParams = useSearchParams();
