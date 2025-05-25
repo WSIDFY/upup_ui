@@ -50,7 +50,13 @@ export default function Main() {
             </div>
           )}
         </div>
-      </div>
+          {/* ⬇️ 하단 우측에 표시될 이미지 추가 */}
+          <img
+          src="/image/KsYEE_Glasses.png"
+          alt="경성이(안경) 이미지"
+          className={styles.decorativeImage}
+          />
+        </div>
 
       {showModal && (
         <UploadModal

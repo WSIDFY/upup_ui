@@ -6,7 +6,25 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: linear-gradient(
+   135deg,
+    #ffe8e8,  /* 밝은 파스텔 레드 */
+    #fffacc,  /* 부드러운 파스텔 옐로우 */
+    #e0f7ff,  /* 아주 연한 파스텔 블루 */
+    #ffd6ec,  /* 핑크빛 오렌지톤 중간색 */
+    #e3f9e5   /* 약간의 민트색 (톤 중화용) */
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    min-height: 100vh;
   }
+
+  /* 배경색 애니메이션 추가 */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
   
   /*배경 스타일*/
   .backgroundImage {
@@ -19,7 +37,8 @@
   
   /*메인 중앙 */
   .contentBox {
-    position: absolute;
+    position: relative;
+    overflow: hidden;   /* 박스 밖으로 나가는 경성이 잘라냄 */
     top: 50%;   /*'중앙박스 세로정렬'*/
     left: 50%;  /*'중앙박스 가로정렬'*/
     transform: translate(-50%, -50%);
@@ -113,4 +132,68 @@
     background-color: #c4c3c3;
   }
   
-  
+  /* 반응형 스타일 추가 */
+@media (max-width: 768px) {
+  .contentBox {
+    width: 90%;
+    height: 70%;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    padding: 8px 16px;
+    margin-bottom: 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* 모바일에서는 1열 그리드 */
+    grid-gap: 15px;
+  }
+
+  .folder,
+  .addButton {
+    width: 100px;
+    height: 100px;
+  }
+
+  .folder img {
+    width: 90px;
+  }
+
+  .folder p {
+    font-size: 14px;
+  }
+
+  .addButton {
+    font-size: 48px;
+  }
+}
+
+/*메인화면의 경성이*/
+.decorativeImage {
+    transition: transform 0.3s ease;
+  position: absolute;
+  bottom: -60px;    /*경성이 아래로 내리기*/
+  right: -80px;     /*경성이의 오른쪽 여백 조절*/
+  width: 440px;      /* 또는 원하는 크기 */
+  height: auto;
+  /* transform: rotate(0deg);*/ /* ← 왼쪽으로 10도 기울이기(애니메이션 사용X일때 사용) */
+  opacity: 0.9;     /* 부드럽게 */
+  z-index: 1;
+  animation: sway 3s ease-in-out infinite; /* 부드럽게 기울기 반복 */
+
+}
+
+/*모바일 화면이면 메인의 경성이 사라짐*/
+@media (max-width: 768px) {
+  .decorativeImage {
+    display: none;
+  }
+}
+/*경성이 동작 프레임 정의*/
+@keyframes sway {
+  0%   { transform: rotate(-20deg); }
+  50%  { transform: rotate(-10deg); }
+  100% { transform: rotate(-20deg); }
+}
