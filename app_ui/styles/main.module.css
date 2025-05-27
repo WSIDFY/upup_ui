@@ -1,3 +1,5 @@
+/* ✅ 메인 페이지 스타일 (회색 영역 유지 + 흰색 폴더 카드) */
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -8,20 +10,13 @@
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
   box-sizing: border-box;
+  position: relative;
 }
 
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-.backgroundImage {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
 }
 
 .heroSection {
@@ -76,16 +71,17 @@
 }
 
 .grayBackground {
-  background-color: #f4f6f8;
   flex: 1;
+  background-color: #f4f6f8;
   padding: 40px 20px 60px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .folderHeaderOnly {
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto 24px;
   padding: 0 20px;
   display: flex;
@@ -95,13 +91,15 @@
 
 .folderSection {
   width: 100%;
-  max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
+  max-width: 1200px;
   margin: 0 auto 60px;
+  padding: 0 20px;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .folderList {
@@ -112,14 +110,16 @@
 
 .folderCard {
   padding: 16px;
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 10px;
   cursor: pointer;
   transition: box-shadow 0.2s;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .folderCard:hover {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .folderCard h4 {
@@ -142,15 +142,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: 40px 0 50px;
 }
 
 .emptyImage {
-  width: 300px;
+  width: 150px;
   height: auto;
   opacity: 0.8;
 }
-
 
 .footer {
   width: 100vw;
@@ -223,7 +222,6 @@
     padding: 8px 14px;
     font-size: 14px;
   }
-  .folderSection { padding: 20px; }
   .folderCard h4 { font-size: 16px; }
   .footer {
     flex-direction: column;
