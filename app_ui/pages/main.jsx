@@ -2,6 +2,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import UploadModal from '../components/FileUploader';
 import styles from '../styles/main.module.css';
+import Footer from '../components/Footer';
 
 export default function Main() {
   const [folders, setFolders] = useState([]);
@@ -50,7 +51,7 @@ export default function Main() {
       <div className={styles.grayBackground}>
   <div className={styles.folderHeaderOnly}>
     <h3>생성된 폴더</h3>
-    <p>해설과 함께 요약하고 퀴즈 생성을 시도해보세요</p>
+    <p>생성된 폴더를 확인하고 학습을 시작해보세요!</p>
   </div>
 
   {folders.length === 0 ? (
@@ -73,45 +74,7 @@ export default function Main() {
 </div>
 
       {/* ✅ 푸터 */}
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <div className={styles.footerSection}>
-            <div className={styles.footerLogoTitle}>
-              Learning Mate
-            </div>
-            <p className={styles.footerText}>
-              효율적인 학습을 위한 최고의 도구입니다. 자료를 정리하고 퀴즈를 생성하여 학습 효과를 높이세요.
-            </p>
-          </div>
-
-          <div className={styles.footerSection}>
-            <div className={styles.footerHeading}>플랫폼</div>
-            <ul className={styles.footerLinkList}>
-              <li>소개</li>
-              <li>기능</li>
-              <li>요금제</li>
-            </ul>
-          </div>
-
-          <div className={styles.footerSection}>
-            <div className={styles.footerHeading}>리소스</div>
-            <ul className={styles.footerLinkList}>
-              <li>도움말</li>
-              <li>자주 묻는 질문</li>
-              <li>문의하기</li>
-            </ul>
-          </div>
-
-          <div className={styles.footerSection}>
-            <div className={styles.footerHeading}>법적 정보</div>
-            <ul className={styles.footerLinkList}>
-              <li>이용약관</li>
-              <li>개인정보처리방침</li>
-              <li>쿠키 정책</li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {showModal && (
         <UploadModal

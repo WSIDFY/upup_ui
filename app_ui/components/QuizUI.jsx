@@ -10,6 +10,10 @@ export default function QuizUI({ quizData }) {
   const [graded, setGraded] = useState(false);
   const [explanationIndex, setExplanationIndex] = useState(null);
 
+  /*유효성 검사 조건문*/
+  if (!quizData) {
+  return <div>퀴즈 데이터를 불러오는 중입니다...</div>;
+}
   const { filename, question, options, explanations } = quizData;
 
   const handleSelect = (idx) => {
