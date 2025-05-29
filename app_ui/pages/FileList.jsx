@@ -41,7 +41,14 @@ export default function FileList() {
     }
   };
 
+  // 버튼 클릭 시, /quiz로 이동하면서, fileID, filename. folderName, dexcription을 쿼리로 받아옴
   const handleGenerateQuiz = () => {
+    // 로딩 오버레이를 0.5초 뒤 표시
+  setTimeout(() => {
+    setShowLoading(true);
+  }, 500);
+
+  // 퀴즈 페이지로 이동 (즉시 이동)
     router.push(`/quiz?file=${fileName}&id=${fileId}&name=${folderName}&description=${description}`);
   };
 
@@ -62,7 +69,6 @@ export default function FileList() {
           <div className={styles.folderCard}>
             <h4>{fileName}</h4>
             <p>{description}</p>
-            <span>폴더 ID: {fileId || '없음'}</span>
             <div className={styles.cardButtons}>
               <button className={styles.grayButton} onClick={handleOpenFile} disabled={isLoading}>
                 {isLoading ? '로딩 중...' : '파일 열기'}

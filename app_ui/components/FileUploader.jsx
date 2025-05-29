@@ -57,7 +57,7 @@ export default function UploadModal({ onClose, onCreate }) {
 
         <p style={{ textAlign: 'left' }}>폴더 설명</p>
         <textarea
-          placeholder="설명 입력 (선택)"
+          placeholder="설명 입력(선택)"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           className={`${styles.input} ${styles.description}`}

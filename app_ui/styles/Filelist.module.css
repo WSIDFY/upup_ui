@@ -27,8 +27,8 @@
   font-size: 48px;
   font-weight: bold;
   background: linear-gradient(to right, #d4a373, #b296ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   margin-bottom: 10px;
 }
 
@@ -191,3 +191,4 @@
     gap: 24px;
   }
 }
+
