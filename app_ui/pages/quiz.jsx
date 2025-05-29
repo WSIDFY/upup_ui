@@ -71,7 +71,7 @@ export default function QuizPage() {
           />
         </div>
       ) : (
-        <QuizUI quizData={quizData} />
+        <QuizUI quizData={quizData} /> // props전달
       )}
     </div>
   );
