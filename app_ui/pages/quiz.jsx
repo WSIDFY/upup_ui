@@ -1,7 +1,5 @@
 // QuizUI에 props전달이 되지 않던 이슈 수정(25.05.29)
 
-// QuizUI에 props전달이 되지 않던 이슈 수정(25.05.29)
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -17,7 +15,7 @@ export default function QuizPage() {
   const [loadingIndex, setLoadingIndex] = useState(1);
   const [showLoading, setShowLoading] = useState(true); // 🔹로딩 표시 제어
 
-  // 🔹 로딩 이미지 순환 효과
+  //  로딩 이미지 순환 효과
   useEffect(() => {
     const interval = setInterval(() => {
       setLoadingIndex((prev) => (prev % 3) + 1); // 1 → 2 → 3 → 1...
@@ -25,13 +23,13 @@ export default function QuizPage() {
     return () => clearInterval(interval);
   }, []);
 
-  // 🔹 퀴즈 데이터 fetch + 최소 로딩 시간 유지
+  // 퀴즈 데이터 fetch + 최소 로딩 시간 유지
   useEffect(() => {
     const fetchQuizData = async () => {
       const startTime = Date.now();
 
       try {
-        const res = await fetch(`http://3.148.139.172:8000/quiz/${fileId}`);
+        const res = await fetch(`http://3.148.139.172:8000/api/v1/generate/${fileName}`);
         if (!res.ok) throw new Error('퀴즈 데이터를 불러올 수 없습니다');
         const data = await res.json();
 

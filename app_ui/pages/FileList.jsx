@@ -1,6 +1,7 @@
 // 파일을 열 때는 파일 ID를 기반으로, 
 // 백엔드에서 해당 파일을 찾아 반환하는 API 엔드포인트를 호출
 // /filelist?name=컴퓨터구조론&description=수업자료&id=3&file=자료.pdf 백엔드에 파일저장시에 브라우저 정상 출력
+
 'use client';
 
 import { useSearchParams, useRouter } from 'next/navigation';
@@ -15,11 +16,11 @@ export default function FileList() {
   const folderName = searchParams.get('name') || '폴더 이름 없음';
   const fileName = searchParams.get('file') || '파일 없음';
   const description = searchParams.get('description') || '폴더 설명 없음';
+  
   const fileId = searchParams.get('id');
-
   const [isLoading, setIsLoading] = useState(false);
-
   const handleOpenFile = async () => {
+
     if (!fileId) {
       alert('파일 ID가 없어 파일을 열 수 없습니다.');
       return;
@@ -27,7 +28,7 @@ export default function FileList() {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`http://3.148.139.172:8000/file/${fileId}`);
+      const response = await fetch(`http://3.148.139.172:8000/api/v1/file/${filename}`);
       if (!response.ok) throw new Error('파일 불러오기에 실패했습니다.');
 
       const blob = await response.blob();
