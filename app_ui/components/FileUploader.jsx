@@ -23,7 +23,7 @@ export default function UploadModal({ onClose, onCreate }) {
     formData.append("lecture_name", name);
 
     try {
-      const data = await uploadFile(formData); // ✅ utils/api.js의 함수 호출
+      const data = await uploadFile(formData); // utils/api.js의 함수 호출
 
       const newFolder = {
         name,

@@ -29,7 +29,7 @@ export default function QuizPage() {
       const startTime = Date.now();
 
       try {
-        const res = await fetch(`http://3.148.139.172:8000/api/v1/generate/${fileName}`);
+        const res = await fetch(`http://3.148.139.172:8000/api/v1/generate/`);
         if (!res.ok) throw new Error('퀴즈 데이터를 불러올 수 없습니다');
         const data = await res.json();
 
@@ -111,4 +111,4 @@ export default function QuizPage() {
 //      <QuizUI quizData={sampleData} />  {/*샘플 데이터를 적용하여 퀴즈 생성 페이지를 렌더링 합니다.*/}
 //    </div>
 //  );
-//}
+//}git 

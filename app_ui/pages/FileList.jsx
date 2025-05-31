@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 export default function FileList() {
   const searchParams = useSearchParams();
-  const router = useRouter(); // ✅ 라우터 사용
+  const router = useRouter(); // 라우터 사용
 
   const folderName = searchParams.get('name') || '폴더 이름 없음';
   const fileName = searchParams.get('file') || '파일 없음';
@@ -19,6 +19,7 @@ export default function FileList() {
   
   const fileId = searchParams.get('id');
   const [isLoading, setIsLoading] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
   const handleOpenFile = async () => {
 
     if (!fileId) {
@@ -26,6 +27,7 @@ export default function FileList() {
       return;
     }
 
+    //뷰어구현
     setIsLoading(true);
     try {
       const response = await fetch(`http://3.148.139.172:8000/api/v1/file/${filename}`);
@@ -44,14 +46,13 @@ export default function FileList() {
 
   // 버튼 클릭 시, /quiz로 이동하면서, fileID, filename. folderName, dexcription을 쿼리로 받아옴
   const handleGenerateQuiz = () => {
-    // 로딩 오버레이를 0.5초 뒤 표시
-  setTimeout(() => {
-    setShowLoading(true);
-  }, 500);
+  setShowLoading(true); // 로딩 즉시 표시
 
-  // 퀴즈 페이지로 이동 (즉시 이동)
+  // 2초 뒤에 퀴즈 페이지로 이동
+  setTimeout(() => {
     router.push(`/quiz?file=${fileName}&id=${fileId}&name=${folderName}&description=${description}`);
-  };
+  }, 2000);
+};
 
   return (
     <div className={styles.wrapper}>

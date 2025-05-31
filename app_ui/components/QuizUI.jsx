@@ -1,5 +1,7 @@
 // 25.05.14 서버에서 퀴즈정보 받아와서 출력 되도록 수정
 
+'use client';
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../styles/quiz.module.css';
